@@ -55,9 +55,9 @@ public class ProductController implements ProductControllerInterface{
 
     //have to ask somebody how to call with UUID
     @Override
-    @GetMapping("/product/temp/{id}")
-    public Optional<ProductModel> findProduct(@RequestParam(value = "id")  UUID uuid) {
-        Optional<ProductModel> product= productService.findProduct( uuid);
+    @GetMapping("/product/uuid/{uuid}")
+    public Optional<ProductModel> findProduct(@RequestParam(value = "uuid") UUID id) {
+        Optional<ProductModel> product= productService.findProduct(id);
         return product;
     }
 
