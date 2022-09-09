@@ -14,12 +14,12 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProductModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID id;
     @Column(name="product_name")
     private String productName;
-    private int quantity;
-
+    private Integer quantity;
+    private Float price;
     public ProductModel(String productName, int quantity) {
         this.productName = productName;
         this.quantity = quantity;

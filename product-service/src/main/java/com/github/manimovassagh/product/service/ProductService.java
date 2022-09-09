@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ProductService implements ProductServiceInterface {
@@ -17,6 +19,23 @@ public class ProductService implements ProductServiceInterface {
         return productRepository.findAll();
     }
 
+
+    public ProductModel addProduct(ProductModel product) {
+        productRepository.save(product);
+        return product;
+    }
+
+    @Override
+    public Optional<ProductModel> findProduct(UUID uuid) {
+      Optional<ProductModel> product= productRepository.findById(uuid);
+      return  product;
+    }
+
+    @Override
+    public List<ProductModel> findByProductName(String name) {
+      List<ProductModel> product= productRepository.findByProductName(name);
+      return  product;
+    }
 
 
 }
