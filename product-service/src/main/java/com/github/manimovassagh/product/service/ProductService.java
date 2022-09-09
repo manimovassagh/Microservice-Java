@@ -37,5 +37,10 @@ public class ProductService implements ProductServiceInterface {
       return  product;
     }
 
+    @Override
+    public List<ProductModel> findByProductCode(String productCode) {
+      return  productRepository.findByProductCode(productCode);
+    }
+
 
 }

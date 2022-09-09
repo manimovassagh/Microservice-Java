@@ -17,4 +17,5 @@ public interface ProductControllerInterface {
 
     public Optional<ProductModel> findProduct(UUID uuid);
     public List<ProductModel> findProductByName(String name);
+    public List<ProductModel> findByProductCode(String productCode);
 }

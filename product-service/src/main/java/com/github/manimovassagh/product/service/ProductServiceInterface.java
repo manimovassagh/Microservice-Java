@@ -13,5 +13,5 @@ public interface ProductServiceInterface {
     public ProductModel addProduct(ProductModel product);
     public Optional<ProductModel> findProduct(UUID uuid);
     public List<ProductModel> findByProductName(String name);
-
+    public List<ProductModel> findByProductCode(String productCode);
 }

@@ -45,6 +45,9 @@ public class ProductController implements ProductControllerInterface{
         if (savedProduct.getPrice()==null ) {
             throw new ServerException("You are not Allowed to add Product without Price");
         }
+        if (savedProduct.getProductCode()==null ) {
+            throw new ServerException("Product Code can not be Empty");
+        }
         else {
             return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
         }
@@ -65,6 +68,12 @@ public class ProductController implements ProductControllerInterface{
     @GetMapping("/product/{name}")
     public List<ProductModel> findProductByName(@PathVariable  String name) {
         return productService.findByProductName(name);
+    }
+
+    @Override
+    @GetMapping("/product/code/{productCode}")
+    public List<ProductModel> findByProductCode(@PathVariable String productCode) {
+     return   productService.findByProductCode(productCode);
     }
 
 
