@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
@@ -16,9 +14,14 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProductModel {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
     @Column(name="product_name")
     private String productName;
     private int quantity;
 
+    public ProductModel(String productName, int quantity) {
+        this.productName = productName;
+        this.quantity = quantity;
+    }
 }
