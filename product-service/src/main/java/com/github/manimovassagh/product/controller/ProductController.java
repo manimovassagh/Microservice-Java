@@ -36,7 +36,7 @@ public class ProductController implements ProductControllerInterface{
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ProductModel> create(@RequestBody ProductModel product) throws ServerException {
             ProductModel savedProduct=productService.addProduct(product);
-        if (savedProduct.getProductName() == null ) {
+        if (savedProduct.getProductName() == null  ) {
             throw new ServerException("The Product can not be Empty or null");
         }
         if (savedProduct.getQuantity() == 0 ) {

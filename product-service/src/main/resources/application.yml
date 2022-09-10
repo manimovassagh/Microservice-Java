@@ -3,6 +3,9 @@ server:
 
 
 spring:
+  output:
+    ansi:
+      enabled: ALWAYS
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/microservice
