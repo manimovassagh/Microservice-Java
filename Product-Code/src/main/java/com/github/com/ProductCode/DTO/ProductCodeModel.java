@@ -3,8 +3,7 @@ package com.github.com.ProductCode.DTO;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @EqualsAndHashCode
@@ -12,10 +11,13 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductCode {
+public class ProductCodeModel {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+    @Column(unique = true)
     private String productName;
+    @Column(unique = true)
     private String productCode;
 
 

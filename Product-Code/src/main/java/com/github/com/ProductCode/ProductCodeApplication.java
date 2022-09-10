@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProductCodeApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProductCodeApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProductCodeApplication.class, args);
+    }
 
 }
