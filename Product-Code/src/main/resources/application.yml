@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/product-code
+    password: mmmmmm
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
