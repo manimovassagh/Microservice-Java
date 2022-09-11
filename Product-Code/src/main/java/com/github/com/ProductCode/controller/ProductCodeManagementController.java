@@ -4,6 +4,7 @@ package com.github.com.ProductCode.controller;
 import com.github.com.ProductCode.DTO.ProductCodeModel;
 import com.github.com.ProductCode.ProductCodeService.ProductCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +16,7 @@ public class ProductCodeManagementController {
     ProductCodeService productCodeService;
 
 
-    @GetMapping("/")
-    public String test() {
-        return "test";
-    }
+
 
     @PostMapping(path = "/new",
             consumes = MediaType.APPLICATION_JSON_VALUE,
