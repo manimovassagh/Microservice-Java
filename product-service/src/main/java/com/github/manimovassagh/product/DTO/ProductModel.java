@@ -1,11 +1,9 @@
 package com.github.manimovassagh.product.DTO;
 
-
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -16,14 +14,16 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProductModel {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(name="product_name")
+    @Column(name = "product_name")
     private String productName;
+
     private Integer quantity;
     private Float price;
     @NotNull
     private String productCode;
+
     public ProductModel(String productName, int quantity) {
         this.productName = productName;
         this.quantity = quantity;

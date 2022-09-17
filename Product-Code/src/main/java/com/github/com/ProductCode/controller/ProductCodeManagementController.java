@@ -22,6 +22,8 @@ public class ProductCodeManagementController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ProductCodeModel defineProductCodeInStore(@RequestBody ProductCodeModel productCodeModel) {
+
+
         return productCodeService.defineNewProductCode(productCodeModel);
     }
 
